@@ -1,0 +1,324 @@
+Declarar variables y luego hacer la suma, la resta, la multiplicación y la división.
+
+public class Main {
+    public static void main(String[] args) {
+        // Declarar variables numéricas
+        int a = 10;
+        int b = 5;
+
+        // Suma
+        int suma = a + b;
+        System.out.println("Suma: " + suma);
+
+        // Resta
+        int resta = a - b;
+        System.out.println("Resta: " + resta);
+
+        // Multiplicación
+        int multiplicacion = a * b;
+        System.out.println("Multiplicación: " + multiplicacion);
+
+        // División
+        int division = a / b;
+        System.out.println("División: " + division);
+    }
+}
+
+
+
+Declarar dos variables y definir si es mayor, menor o igual
+
+public class Main {
+    public static void main(String[] args) {
+        // Declarar dos variables
+        int s1 = 10;
+        int s2 = 5;
+
+        // Comprobar si s1 es mayor que s2
+        if (s1 > s2) {
+            System.out.println("s1 es mayor que s2");
+        } else if (s1 < s2) { // Comprobar si s1 es menor que s2
+            System.out.println("s1 es menor que s2");
+        } else { // Si no es mayor ni menor, entonces son iguales
+            System.out.println("s1 es igual a s2");
+        }
+    }
+}
+
+
+
+Declara un String que contenga tu nombre, después muestra un mensaje de bienvenida por consola.
+
+public class Saludo {
+    public static void main(String[] args) {
+
+        String miNombre = "Alejandro";
+
+        System.out.println("¡Hola! Bienvenido, soy " + miNombre + ".");
+    }
+}
+
+
+
+ Modifica la aplicación anterior, para que nos pida el nombre que queremos introducir
+
+import java.util.Scanner;
+
+public class Saludo {
+    public static void main(String[] args) {
+        // Crear un objeto Scanner para leer la entrada del usuario
+        Scanner scanner = new Scanner(System.in);
+
+        // Pedir al usuario que ingrese su nombre
+        System.out.print("Por favor, ingresa tu nombre: ");
+        String nombre = scanner.nextLine();
+
+        // Mostrar un mensaje de bienvenida por consola
+        System.out.println("¡Hola, " + nombre + "! Bienvenido a nuestro programa.");
+    }
+}
+
+
+
+Haz una aplicación que calcule el área de un círculo(pi*R2). El radio se pedirá por teclado (recuerda pasar de String a double con Double.parseDouble). Usa la constante PI y el método pow de Math.
+
+import java.util.Scanner;
+
+public class CalcularAreaCirculo {
+    public static void main(String[] args) {
+        // Crear un objeto Scanner para leer la entrada del usuario
+        Scanner scanner = new Scanner(System.in);
+
+        // Pedir al usuario que ingrese el radio del círculo
+        System.out.print("Por favor, ingresa el radio del círculo: ");
+        String radioStr = scanner.nextLine();
+
+        // Convertir el radio de String a double
+        double radio = Double.parseDouble(radioStr);
+
+        // Calcular el área del círculo
+        double area = Math.PI * Math.pow(radio, 2);
+
+        // Mostrar el resultado por consola
+        System.out.println("El área del círculo con radio " + radio + " es: " + area);
+    }
+}
+
+
+
+Lee un número por teclado e indica si es divisible entre 2 (resto = 0). Si no lo es, también debemos indicarlo.
+
+import java.util.Scanner;
+
+public class DivisibleEntreDos {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Por favor, ingresa un número entero: ");
+        int numero = scanner.nextInt();
+
+        if (numero % 2 == 0) {
+            System.out.println("El número " + numero + " es divisible entre 2.");
+        } else {
+            System.out.println("El número " + numero + " no es divisible entre 2.");
+        }
+    }
+}
+
+
+
+Lee un número por teclado y muestra por consola, el carácter al que pertenece en la tabla ASCII. Por ejemplo: si introduzco un 97, me muestre una a.
+
+import java.util.Scanner;
+
+public class CaracterASCII {
+    public static void main(String[] args) {
+        // Crear un objeto Scanner para leer la entrada del usuario
+        Scanner scanner = new Scanner(System.in);
+
+        // Pedir al usuario que ingrese un número
+        System.out.print("Por favor, ingresa un número entero: ");
+        int numero = scanner.nextInt();
+
+        // Convertir el número a un carácter ASCII
+        char caracter = (char) numero;
+
+        // Mostrar el carácter por consola
+        System.out.println("El número " + numero + " corresponde al carácter ASCII: " + caracter);
+    }
+}
+
+
+
+Modifica el ejercicio anterior, para que en lugar de pedir un número, pida un carácter (char) y muestre su código en la tabla ASCII.
+
+import java.util.Scanner;
+
+public class CaracterASCII {
+    public static void main(String[] args) {
+        // Crear un objeto Scanner para leer la entrada del usuario
+        Scanner scanner = new Scanner(System.in);
+
+        // Pedir al usuario que ingrese un carácter
+        System.out.print("Por favor, ingresa un carácter: ");
+        char caracter = scanner.next().charAt(0); // Leemos solo el primer carácter ingresado
+
+        // Convertir el carácter a su valor ASCII
+        int valorASCII = (int) caracter;
+
+        // Mostrar el valor ASCII por consola
+        System.out.println("El carácter '" + caracter + "' tiene el valor ASCII: " + valorASCII);
+    }
+}
+
+
+
+Lee un número por teclado que pida el precio de un producto (puede tener decimales) y calcule el precio final con IVA. El IVA sera una constante que sera del 21%.
+
+import java.util.Scanner;
+
+public class PrecioConIVA {
+    public static void main(String[] args) {
+        // Definir la constante del IVA
+        final double IVA = 0.21;
+
+        // Crear un objeto Scanner para leer la entrada del usuario
+        Scanner scanner = new Scanner(System.in);
+
+        // Pedir al usuario que ingrese el precio del producto
+        System.out.print("Por favor, ingresa el precio del producto: ");
+        double precioProducto = scanner.nextDouble();
+
+        // Calcular el precio final con IVA
+        double precioFinal = precioProducto * (1 + IVA);
+
+        // Mostrar el precio final con IVA por consola
+        System.out.println("El precio final del producto con IVA es: " + precioFinal);
+    }
+}
+
+
+
+Muestra los números del 1 al 100 (ambos incluidos). Usa un bucle while.
+
+public class NumerosDelUnoAlCien {
+    public static void main(String[] args) {
+        int contador = 1;
+
+        while (contador <= 100) {
+            System.out.println(contador);
+            contador++;
+        }
+    }
+}
+
+
+
+Pedir un número entre 0 a 9999 y mostrarlo con las cifras al revés.
+
+import java.util.Scanner;
+
+public class NumeroAlReves {
+    public static void main(String[] args) {
+        // Crear un objeto Scanner para leer la entrada del usuario
+        Scanner scanner = new Scanner(System.in);
+
+        // Pedir al usuario que ingrese un número entre 0 y 9999
+        System.out.print("Por favor, ingresa un número entre 0 y 9999: ");
+        int numero = scanner.nextInt();
+
+        // Verificar si el número está en el rango permitido
+        if (numero >= 0 && numero <= 9999) {
+            // Convertir el número a cadena para facilitar el reverso
+            String numeroCadena = String.valueOf(numero);
+
+            // Mostrar el número al revés
+            System.out.print("El número " + numero + " al revés es: ");
+            for (int i = numeroCadena.length() - 1; i >= 0; i--) {
+                System.out.print(numeroCadena.charAt(i));
+            }
+        } else {
+            System.out.println("El número ingresado está fuera del rango permitido.");
+        }
+    }
+}
+
+
+
+Realizar un programa que permita ingresar un número. El programa deberá representar las tablas de multiplicar.
+
+import java.util.Scanner;
+
+public class TablaDeMultiplicar {
+    public static void main(String[] args) {
+        // Crear un objeto Scanner para leer la entrada del usuario
+        Scanner scanner = new Scanner(System.in);
+
+        // Pedir al usuario que ingrese un número
+        System.out.print("Por favor, ingresa un número para ver su tabla de multiplicar: ");
+        int numero = scanner.nextInt();
+
+        // Mostrar la tabla de multiplicar del número ingresado
+        System.out.println("Tabla de multiplicar del " + numero + ":");
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(numero + " x " + i + " = " + (numero * i));
+        }
+    }
+}
+
+
+
+Dadas las edades y alturas de n estudiantes, mostrar la edad y la estatura media, la cantidad de alumnos mayores de 18 años, y la cantidad de estudiantes que miden más de 175 cm.
+
+import java.util.Scanner;
+
+public class EstadisticasEstudiantes {
+    public static void main(String[] args) {
+        // Crear un objeto Scanner para leer la entrada del usuario
+        Scanner scanner = new Scanner(System.in);
+
+        // Pedir al usuario que ingrese la cantidad de estudiantes
+        System.out.print("Por favor, ingresa la cantidad de estudiantes: ");
+        int cantidadEstudiantes = scanner.nextInt();
+
+        // Variables para almacenar la suma de edades y alturas
+        int sumaEdades = 0;
+        double sumaAlturas = 0.0;
+
+        // Variables para contar estudiantes mayores de 18 años y con altura mayor a 175 cm
+        int estudiantesMayoresDe18 = 0;
+        int estudiantesAlturaMayor175 = 0;
+
+        // Leer las edades y alturas de los estudiantes
+        for (int i = 1; i <= cantidadEstudiantes; i++) {
+            System.out.println("Estudiante " + i + ":");
+            System.out.print("Edad: ");
+            int edad = scanner.nextInt();
+            sumaEdades += edad;
+
+            System.out.print("Altura (en cm): ");
+            double altura = scanner.nextDouble();
+            sumaAlturas += altura;
+
+            if (edad > 18) {
+                estudiantesMayoresDe18++;
+            }
+
+            if (altura > 175) {
+                estudiantesAlturaMayor175++;
+            }
+        }
+
+        // Calcular la media de edades y alturas
+        double mediaEdades = (double) sumaEdades / cantidadEstudiantes;
+        double mediaAlturas = sumaAlturas / cantidadEstudiantes;
+
+        // Mostrar los resultados
+        System.out.println("\nResultados:");
+        System.out.println("Edad media de los estudiantes: " + mediaEdades);
+        System.out.println("Altura media de los estudiantes (en cm): " + mediaAlturas);
+        System.out.println("Cantidad de estudiantes mayores de 18 años: " + estudiantesMayoresDe18);
+        System.out.println("Cantidad de estudiantes con altura mayor a 175 cm: " + estudiantesAlturaMayor175);
+    }
+}
+	
