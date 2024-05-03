@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class ReverseNumber {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Pedir al usuario que ingrese un número entre 0 y 9999
+        System.out.print("Ingrese un número entre 0 y 9999: ");
+        int numero = scanner.nextInt();
+
+        if (numero < 0 || numero > 9999) {
+            System.out.println("Número fuera de rango. Por favor, ingrese un número entre 0 y 9999.");
+            return;
+        }
+
+        // Convertir el número a una cadena para poder revertir las cifras
+        String numeroComoCadena = String.valueOf(numero);
+
+        // Crear una cadena para almacenar el número revertido
+        String numeroRevertido = "";
+
+        // Recorrer la cadena del número al revés y agregar cada carácter a la cadena del número revertido
+        for (int i = numeroComoCadena.length() - 1; i >= 0; i--) {
+            numeroRevertido += numeroComoCadena.charAt(i);
+        }
+
+        // Mostrar el número original y el número revertido
+        System.out.println("Número original: " + numero);
+        System.out.println("Número al revés: " + numeroRevertido);
+    }
+}
+Este código solicita al usuario un número entre 0 y 9999. Luego, convierte ese número en una cadena para poder manipularlo más fácilmente y revertir las cifras. Finalmente, muestra tanto el número original como el número con las cifras al revés.
+
+
+
+
+By sending a message, you agree to our Terms. Read our Privacy Policy. Don't share sensitive info. Chats may be reviewed and used to train our models. Learn about your choices.

@@ -1,0 +1,50 @@
+jpublic class Empleado {
+    // Atributos
+    private String nombre;
+    private String rol;
+    private int horasTrabajadas;
+    private double valorHora;
+
+    // Constructor
+    public Empleado(String nombre, String rol, int horasTrabajadas, double valorHora) {
+        this.nombre = nombre;
+        this.rol = rol;
+        this.horasTrabajadas = horasTrabajadas;
+        this.valorHora = valorHora;
+    }
+o
+    // Método para calcular el salario del emplead
+    public double calcularSalario() {
+        return horasTrabajadas * valorHora;
+    }
+
+    // Método para calcular el 4% de salud
+    public double calcularSalud() {
+        return 0.04 * calcularSalario();
+    }
+
+    // Método para calcular el 3% de pensión
+    public double calcularPension() {
+        return 0.03 * calcularSalario();
+    }
+
+    // Método para imprimir la información del empleado y su salario neto
+    public void imprimirInfo() {
+        double salarioNeto = calcularSalario() - calcularSalud() - calcularPension();
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Rol: " + rol);
+        System.out.println("Horas trabajadas: " + horasTrabajadas);
+        System.out.println("Valor por hora: " + valorHora);
+        System.out.println("Salario: " + calcularSalario());
+        System.out.println("Descuento de salud (4%): " + calcularSalud());
+        System.out.println("Descuento de pensión (3%): " + calcularPension());
+        System.out.println("Salario Neto: " + salarioNeto);
+    }
+
+    // Método principal para probar la clase
+    public static void main(String[] args) {
+        // Ejemplo de uso
+        Empleado empleado1 = new Empleado("Juan", "Programador", 40, 15.0);
+        empleado1.imprimirInfo();
+    }
+}
